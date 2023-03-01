@@ -1,0 +1,48 @@
+# Jisselle Garcia, Lab 8
+# This program is allows the user to choose from a menu, and calculates various options.
+
+# importing calculation functions from Circle.py and Rectangle.py
+import math
+from Circle import *
+from Rectangle import *
+
+calculator = True
+
+while calculator:
+    while calculator == True:
+        print("Calculation Menu (1-5)")
+        print(
+            "\n 1. Area of a circle\n 2. Circumference of a circle \n 3. Area of a rectangle \n 4. Perimeter of a rectangle \n 5. Quit"
+        )
+        options = int(input("Enter the option you wish to calculate: "))
+
+        if options == 1:
+            c_radius_a = float(input("Please enter the circle's radius: "))
+            print(f"The area of the circle is: ", c_area(c_radius_a))
+            break
+        elif options == 2:
+            c_radius_c = float(input("Please enter the circle's radius: "))
+            print(f"The circumference of the circle is: ", c_circumference(c_radius_c))
+            break
+        elif options == 3:
+            area_w = float(input("Please enter the rectangle's width: "))
+            area_l = float(input("Please enter the rectangle's length: "))
+            print(f"the area of the rectangle is: ", r_area(area_w, area_l))
+            break
+        elif options == 4:
+            p_width = float(input("Please enter the rectangle's width: "))
+            p_length = float(input("Please enter the rectangle's length: "))
+            print(
+                f"the perimeter of the rectangle is: ", r_perimeter(p_width, p_length)
+            )
+            break
+        elif options == 5:
+            print("Exiting...")
+            break
+
+    choice = input("Do you wish to use the calculator again? y/n ")
+    if choice.lower() == ("n"):
+        calculator = False
+        print("Exiting...")
+    else:
+        calculator = True
